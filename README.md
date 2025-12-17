@@ -1,2 +1,7 @@
-# supreme-gogglesx-5-T_T-
-概要 / Overview  本提案は、以下の文字体系を同一言語内で役割分担して使用するという構想です。  漢字  ひらがな  カタカナ  顔文字（Kaomoji）  数字  ローマ数字  英語  記号・特殊記号  絵文字（Emoji）   特に本提案の特徴は、**顔文字を「感情」ではなく「状態・分岐の修飾子」**として扱う点にあります。
+HFA Core v0.1
+
+- HFA programs consist of ordered facial expressions.
+- Each expression represents a conscious state of the program.
+- Expressions do not directly execute actions.
+- State transitions may occur only after declaration.
+- Successful transitions are externally observable as SHIFT expressions.
