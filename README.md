@@ -1,7 +1,237 @@
-HFA Core v0.1
+---
 
-- HFA programs consist of ordered facial expressions.
-- Each expression represents a conscious state of the program.
-- Expressions do not directly execute actions.
-- State transitions may occur only after declaration.
-- Successful transitions are externally observable as SHIFT expressions.
+HFA（Hybrid Face Assembly）
+
+公式仕様 v0.1
+
+
+---
+
+1. 基本定義（Overview）
+
+HFAは
+顔文字・記号・時間・状態を最小要素とする
+状態駆動型・意味論アセンブリ言語である。
+
+命令は顔文字または記号で表現される
+
+実行は「状態」に強く依存する
+
+「何もしない状態（ZERO）」を正式に定義する
+
+
+
+---
+
+2. 用語定義
+
+用語	定義
+
+状態（State）	実行可能性の集合
+命令（Instruction）	顔文字または記号による操作
+実行者（Executor）	HFAを動かす存在（人・環境）
+ゼロスペック	能力を持つが行使しない状態
+
+
+
+---
+
+3. 形式定義（Formal Definition）
+
+3.1 プログラム全体構造
+
+HFA-Program ::= Header? StateDecl* CodeBlock+
+
+Header：メタ情報（任意）
+
+StateDecl：状態宣言
+
+CodeBlock：命令列（必須）
+
+
+
+---
+
+3.2 ヘッダ定義（任意）
+
+Header ::= ⌈meta⌋ MetaItem* ⌊meta⌋
+MetaItem ::= Key ":" Value
+
+例：
+
+⌈meta⌋
+name: demo
+version: 0.1
+⌊meta⌋
+
+※ 実行意味には影響しない
+
+
+---
+
+3.3 状態定義（State Declaration）
+
+StateDecl ::= ◉ StateName ◉
+StateName ::= ZERO | NORMAL | OVER | SLEEP
+
+標準状態（v0.1）
+
+状態	意味
+
+ZERO	初期状態・非行使
+NORMAL	通常実行
+OVER	高負荷・制限付き
+SLEEP	停止状態
+
+
+
+---
+
+3.4 初期状態
+
+InitialState = ZERO
+
+すべてのHFAプログラムは
+必ずZERO状態から開始する。
+
+
+---
+
+3.5 状態遷移規則（抽象）
+
+ZERO    --(時間/刺激)--> NORMAL
+NORMAL  --(過剰要求)--> OVER
+OVER    --(時間)--> NORMAL
+NORMAL  --(停止命令)--> SLEEP
+SLEEP   --(覚醒命令)--> NORMAL
+
+※ 状態遷移は暗黙または命令で発生する
+
+
+---
+
+4. 命令形式（Instruction Form）
+
+4.1 命令構文
+
+Instruction ::= Opcode Operand*
+
+Opcode：顔文字 or 記号（必須）
+
+Operand：補助情報（任意）
+
+
+
+---
+
+4.2 命令の分類
+
+状態操作命令
+
+時間命令
+
+実行制御命令
+
+意思・意味表現命令
+
+
+
+---
+
+5. 命令セット（公式 v0.1）
+
+5.1 状態操作命令
+
+命令	意味
+
+(・_・)	状態確認
+(｀・ω・´)	NORMALへ遷移
+(╬ಠ益ಠ)	OVERへ遷移
+( ˘ω˘ )	SLEEPへ
+( ﾟдﾟ )	覚醒
+
+
+
+---
+
+5.2 時間命令
+
+命令	意味
+
+⏳	時間経過
+⏱ n	n単位待機
+
+
+
+---
+
+5.3 実行制御
+
+命令	意味
+
+▶	実行開始
+■	実行停止
+🔁	ループ
+❌	中断
+
+
+
+---
+
+5.4 意思・意味表現
+
+命令	意味
+
+(^^)	肯定
+(・・?)	疑問
+(；´Д｀)	負荷警告
+(´ー｀)	安定
+
+
+
+---
+
+6. 状態別命令制約
+
+6.1 ZERO状態
+
+許可命令：
+
+⏳
+
+(・_・)
+
+( ﾟдﾟ )
+
+
+禁止命令：
+
+すべての実行・出力命令
+
+
+👉 能力はあるが行使しない
+
+
+---
+
+7. 実行モデル
+
+1命令 = 1ステップ
+
+状態により命令の有効性が変化
+
+無効命令は no-op または警告
+
+
+
+---
+
+8. 最小実行例
+
+▶
+(・_・)
+⏳
+( ﾟдﾟ )
+(｀・ω・´)
+(^^)
+■
