@@ -3,11 +3,21 @@
 This directory contains formal specifications and design documents
 for the HFA language.
 
-- spec-v0.1.md : Official language specification
-- kaomoji-instructions.md : Definition of kaomoji as first-class instructions
-Design Note:
+## Contents
+
+- **spec-v0.1.md**  
+  Official language specification
+
+- **kaomoji-instructions.md**  
+  Definition of kaomoji as first-class instructions
+
+## Design Note
+
 HFA intentionally avoids complex templates.
 Minimal definitions are preferred over exhaustive specifications.
+
+## Overview
+
 HFA (Hybrid Face Assembly) is an experimental programming language
 specification that treats kaomoji and symbols as first-class instructions.
 The language is state-driven and explicitly defines a ZERO state,
