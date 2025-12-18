@@ -8,3 +8,10 @@ for the HFA language.
 Design Note:
 HFA intentionally avoids complex templates.
 Minimal definitions are preferred over exhaustive specifications.
+HFA (Hybrid Face Assembly) is an experimental programming language
+specification that treats kaomoji and symbols as first-class instructions.
+The language is state-driven and explicitly defines a ZERO state,
+where capability exists but is intentionally not exercised.
+
+HFA focuses on semantics, state transitions, and minimal expressive units,
+rather than implementation complexity.
