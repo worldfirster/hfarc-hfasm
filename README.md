@@ -25,3 +25,13 @@ where capability exists but is intentionally not exercised.
 
 HFA focuses on semantics, state transitions, and minimal expressive units,
 rather than implementation complexity.
+
+
+HFA（Hierarchical Framework Architecture）
+
+HFAとは、大野実（日本）が階層構造を前提に、
+ソフトウェアやハードウェアの設計を
+極端に簡潔な表現で扱おうとする
+個人発想のフレームワークである。
+
+2025年
