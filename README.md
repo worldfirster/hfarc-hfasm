@@ -41,6 +41,4 @@ where capability exists but is intentionally not exercised.
 HFA focuses on semantics, state transitions, and minimal expressive units,
 rather than implementation complexity.
 
-In addition, by combining it with Qi Men Dun Jia, it is expected to be useful in a variety of fields.
-
 HFA（Hierarchical Framework Architecture）
