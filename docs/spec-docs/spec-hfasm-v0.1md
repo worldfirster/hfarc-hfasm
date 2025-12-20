@@ -44,7 +44,7 @@ HFArc+HFASMは
 
 3.1 プログラム全体構造
 
-HFA-Program ::= Header? StateDecl* CodeBlock+
+HFASM-Program ::= Header? StateDecl* CodeBlock+
 
 Header：メタ情報（任意）
 
