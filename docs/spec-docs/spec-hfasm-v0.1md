@@ -2,8 +2,7 @@
 
 ## Overview
 
-HFArc+HFASM (Hybrid Face Assembly) is an experimental programming language
-specification that treats kaomoji and symbols as first-class instructions.
+HFArc+HFASM (Hybrid Face Assembly) is an experimental programming language specification...
 The language is state-driven and explicitly defines a ZERO state,
 where capability exists but is intentionally not exercised.
 
