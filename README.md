@@ -1,6 +1,10 @@
-HFA理論（Hierarchical Framework Architecture）とは顔文字や記号を第一級命令として扱う状態駆動型の実験的言語仕様（Hybrid Face Assembly）と、階層構造と最小定義を重視する設計思想
-（Hierarchical Framework Architecture）の総称である。
-階層構造を前提に、ソフトウェアやハードウェアの設計を
+HFA理論（Hierarchical Framework Architecture）とは、
+顔文字や記号を第一級命令として扱う状態駆動型の実験的言語仕様
+「HFA（Hybrid Face Assembly）」と、
+階層構造と最小定義を重視する設計思想を包含する総称である。
+
+HFA理論は、階層構造を前提に、
+ソフトウェアやハードウェアの設計を
 極端に簡潔な表現で扱おうとする
 個人発想（作成者：大野実）のフレームワークである。
 
