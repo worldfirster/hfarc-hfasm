@@ -16,7 +16,7 @@ HFArc+HFASM理論は、階層構造を前提に、
 
 # HFArc+HFASM Documentation
 
-This directory contains formal specifications and design documents for the HFA language.
+This directory contains formal specifications and design documents for the HFArc+HFASM language.
 
 ## Contents
 
