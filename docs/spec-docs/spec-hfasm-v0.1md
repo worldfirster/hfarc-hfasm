@@ -80,12 +80,9 @@ StateName ::= ZERO | NORMAL | OVER | SLEEP
 
 標準状態（v0.1）
 
-状態	意味
-
-ZERO	初期状態・非行使
-NORMAL	通常実行
-OVER	高負荷・制限付き
-SLEEP	停止状態
+ZERO    --(内部成立/時間)--> NORMAL
+NORMAL  --(過剰要求)------> OVER
+OVER    --(構造的帰結)----> ZERO
 
 
 
@@ -235,7 +232,6 @@ Operand：補助情報（任意）
 ▶
 (・_・)
 ⏳
-( ﾟдﾟ )
 (｀・ω・´)
 (^^)
 ■
