@@ -1,48 +1,47 @@
-本リポジトリでは、
-HFArc を設計思想・理論体系、
-HFASM をその理論に基づく実験的言語仕様として扱う。
+# HFA/ASMrc
 
-HFArc+HFASM理論（Hierarchical Framework Architecture）とは、
-顔文字や記号を第一級命令として扱う状態駆動型の実験的言語仕様
-「HFASM（Hybrid Face Assembly、旧称：HFA）」と、
-階層構造と最小定義を重視する設計思想を包含する総称である。
+本リポジトリでは、HFA/ASMrc を設計思想・理論体系および実験的言語仕様として扱います。
 
-また、奇門遁甲と組み合わせる事で様々な分野での活躍が期待される。
+HFA/ASMrc（Hierarchical Framework Architecture / ASMrc）は、  
+顔文字や記号を第一級命令として扱う状態駆動型の実験的言語仕様と、  
+階層構造と最小定義を重視する設計思想を包含する総称です。  
 
-HFArc+HFASM理論は、階層構造を前提に、
-ソフトウェアやハードウェアの設計を
-極端に簡潔な表現で扱おうとする
-個人発想（作成者：大野実）のフレームワークである。
-
-定義初出：2025年
+HFA/ASMrc は、階層構造を前提に、ソフトウェアやハードウェアの設計を  
+極端に簡潔な表現で扱おうとする個人発想（作成者：大野実）のフレームワークであり、  
+定義初出：2025年。
 
 ---
 
-# HFArc+HFASM Documentation
+## Documentation
 
-This directory contains formal specifications and design documents for the HFArc+HFASM language.
+This directory contains formal specifications and design documents for the HFA/ASMrc language.
 
-## Contents
+### Contents
 
-- **spec-v0.1.md**  
-  Official language specification
+- **spec-hfasm-v0.1.md** : Official language specification  
+- **kaomoji-instructions.md** : Definition of kaomoji as first-class instructions
 
-- **kaomoji-instructions.md**  
-  Definition of kaomoji as first-class instructions
+### Design Note
 
-## Design Note
+HFA/ASMrc intentionally avoids complex templates. Minimal definitions are preferred over exhaustive specifications.
 
-HFArc+HFASM intentionally avoids complex templates.
-Minimal definitions are preferred over exhaustive specifications.
+### Overview
 
-## Overview
+HFA/ASMrc is an experimental programming language specification that treats kaomoji and symbols as first-class instructions.  
+The language is state-driven and explicitly defines a ZERO state, where capability exists but is intentionally not exercised.  
+HFA/ASMrc focuses on semantics, state transitions, and minimal expressive units, rather than implementation complexity.
 
-HFArc+HFASM (Hybrid Face Assembly) is an experimental programming language specification
-that treats kaomoji and symbols as first-class instructions.
-The language is state-driven and explicitly defines a ZERO state,
-where capability exists but is intentionally not exercised.
+---
 
-HFArc+HFASM focuses on semantics, state transitions, and minimal expressive units,
-rather than implementation complexity.
+## Notes
 
-HFArc+HFASM (Hierarchical Framework Architecture / Hybrid Face Assembly)
+- ZERO state is the initial state where abilities exist but are not exercised.  
+- Hierarchical structure allows short commands to convey complete meaning.  
+- All programs start from ZERO state.  
+- Complex templates and exhaustive specifications are intentionally avoided.  
+
+---
+
+**Author:** 大野実  
+**GitHub Account:** worldfirster  
+**Specification Version:** v0.1
