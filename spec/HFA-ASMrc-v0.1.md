@@ -26,19 +26,16 @@ HFA/ASMrcを動かす存在（人・環境）
 能力を持つが、意図として行使しない状態
 3. 形式定義（Formal Definition）
 3.1 プログラム全体構造
-コードをコピーする
 
 HFA/ASMrc-Program ::= Header? StateDecl* CodeBlock+
 Header：メタ情報（任意）
 StateDecl：状態宣言
 CodeBlock：命令列（必須）
 3.2 ヘッダ定義（任意）
-コードをコピーする
 
 Header ::= ⌈meta⌋ MetaItem* ⌊meta⌋
 MetaItem ::= Key ":" Value
 例：
-コードをコピーする
 
 ⌈meta⌋
 name: demo
@@ -46,12 +43,10 @@ version: 0.1
 ⌊meta⌋
 ※ 実行意味には影響しない
 3.3 状態定義（State Declaration）
-コードをコピーする
 
 StateDecl ::= ◉ StateName ◉
 StateName ::= ZERO | NORMAL | OVER
 標準状態遷移（v0.1）
-コードをコピーする
 
 ZERO    --(内部成立/時間)--> NORMAL
 NORMAL  --(過剰要求)------> OVER
@@ -59,13 +54,11 @@ OVER    --(構造的帰結)----> ZERO
 OVER から NORMAL への遷移は存在しない
 OVER は回復状態ではなく、非行使へ戻るための帰結である
 3.4 初期状態
-コードをコピーする
 
 InitialState = ZERO
 すべての HFASM プログラムは
 必ず ZERO 状態から開始する。
 3.5 状態遷移規則（抽象）
-コードをコピーする
 
 ZERO    --(時間/内部条件)--> NORMAL
 NORMAL  --(過剰要求)------> OVER
@@ -74,7 +67,6 @@ OVER    --(不可逆帰結)----> ZERO
 すべて 人的非介入 を前提とする
 4. 命令形式（Instruction Form）
 4.1 命令構文
-コードをコピーする
 
 Instruction ::= Opcode Operand*
 Opcode：顔文字 or 記号（必須）
@@ -138,7 +130,6 @@ n単位の時間進行
 状態により命令の有効性が変化
 無効命令は no-op または警告として扱う
 8. 最小実行例
-コードをコピーする
 
 ▶
 (・_・)
